@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '>= 2.11.0'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'rails',      '6.1.0'
 gem 'puma',       '5.0.4'
