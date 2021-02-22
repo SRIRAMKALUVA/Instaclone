@@ -48,6 +48,9 @@ Rails.application.configure do
 
   # Raise exceptions for disallowed deprecations.
   config.active_support.disallowed_deprecation = :raise
+  
+  # Speed up tests by lowering bcrypt's cost function.
+  ActiveModel::SecurePassword.min_cost = true
 
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
