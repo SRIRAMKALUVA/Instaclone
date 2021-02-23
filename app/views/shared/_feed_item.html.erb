@@ -2,8 +2,8 @@
   <%= link_to gravatar_for(feed_item.user), feed_item.user %>
   <span class="user">
     <%= link_to feed_item.user.name, feed_item.user %>
-  </span>
-  <%= image_tag(feed_item.image) %>
+  </span><br>
+  <span class="img"><%= image_tag(feed_item.image) %></span>
   <span class="content"><%= feed_item.caption %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
