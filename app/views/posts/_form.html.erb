@@ -1,0 +1,14 @@
+<%= form_with(model: post) do |form| %>
+  <div class="row">
+    <div class="span6 offset3">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+    <div class="span6 offset3">
+    <%= form.label :caption %>
+    <%= form.text_area :caption %>
+  </div>
+  </div>
+  <%= form.submit "Create Post", class: "btn btn-large btn-primary" %>
+<% end %>

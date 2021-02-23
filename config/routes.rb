@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :post, only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy]
   root  'static_pages#home'
+  match '/microposts/:id', to: 'microposts#destroy',     via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
