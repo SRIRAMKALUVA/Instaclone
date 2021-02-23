@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   resources :posts
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :post, only: [:create, :destroy]
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   root  'static_pages#home'
   match '/microposts/:id', to: 'microposts#destroy',     via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
