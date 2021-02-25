@@ -1,7 +1,7 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="imguploader">
-    <%= f.file_field :image, value: "Choose a file" %>
+    <%= f.file_field :image, value: "Choose a file", direct_upload: true %>
   </div>
   <div class="field">
     <%= f.text_area :caption, placeholder: "Caption/Describe your post here..." %>
