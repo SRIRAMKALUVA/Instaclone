@@ -46,7 +46,7 @@ group :test do
   gem 'guard-minitest',           '2.4.6'
   gem 'factory_girl_rails', '4.2.0'
 end
-
+gem 'rails_12factor', group: :production
 group :production do
   gem 'pg', '1.2.3'
 end
