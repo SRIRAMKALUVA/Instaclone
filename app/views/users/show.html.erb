@@ -1,4 +1,8 @@
 <% provide(:title, @user.name) %>
+<div class="profilehead">
+  <h1><%= @user.name %>'s Profile</h1>
+</div>
+
 <div class="row">
   <aside class="span4">
     <section>
@@ -21,5 +25,5 @@
       <%= will_paginate @microposts %>
     <% end %>
   </div>
-
 </div>
+<h1>test</h1>

@@ -1,4 +1,7 @@
 @import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://css.gg/boy.css');
+@import url('https://css.gg/home-alt.css');
 
 /* universal */
 
@@ -8,8 +11,8 @@ html {
 
 body {
   padding-top: 60px;
-  font-family: "Lucida Console", "Courier New", monospace;
-  background-color: #f7f7f7;
+  font-family: 'Inconsolata', monospace;
+  background-color: white;
 }
 
 section {
@@ -28,6 +31,212 @@ textarea {
   margin-bottom: 10px;
 }
 
+
+
+.gg-boy,
+.gg-boy::after,
+.gg-boy::before {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 42px
+}
+.gg-boy {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    transform: scale(var(--ggs,1));
+    overflow: hidden;
+    box-shadow: inset 0 0 0 2px
+}
+.gg-boy::after,
+.gg-boy::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 6px 0 0;
+    left: 6px;
+    top: 10px
+}
+.gg-boy::after {
+    width: 20px;
+    height: 20px;
+    top: -13px;
+    right: -12px;
+}
+.gg-boy:hover{
+  color: #A4A4A4;
+}
+.gg-instagram {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px
+}
+.gg-instagram::after,
+.gg-instagram::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+.gg-instagram::after {
+    border: 2px solid;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    top: 3px
+}
+.gg-instagram::before {
+    border-radius: 3px;
+    width: 2px;
+    height: 2px;
+    background: currentColor;
+    right: 1px;
+    top: 1px
+}
+.gg-instagram:hover{
+  color: #A4A4A4;
+}
+
+
+  .gg-profile,
+.gg-profile::after,
+.gg-profile::before {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-radius: 100px
+}
+.gg-profile {
+    overflow: hidden;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    position: relative
+}
+.gg-profile:hover{
+  color: #A4A4A4;
+}
+.gg-profile::after,
+.gg-profile::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 8px;
+    height: 8px
+}
+.gg-profile::after {
+    border-radius: 200px;
+    top: 11px;
+    left: 0px;
+    width: 18px;
+    height: 18px
+}
+.gg-chevron-double-down-r {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    border: 2px solid;
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+}
+.gg-chevron-double-down-r::after,
+.gg-chevron-double-down-r::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    left: 6px;
+    top: 3px
+}
+.gg-chevron-double-down-r::after {
+    top: 7px
+}
+.gg-chevron-double-down-r:hover{
+  color: #A4A4A4;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+//test
+.profilehead {
+  text-align: center;
+  text-transform: capitalize;
+  font-family: 'Inconsolata', monospace;
+  font-size: 0.5em;
+  letter-spacing: 5px;
+  line-height: 1;
+}
+
+.button {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: 'Inconsolata', monospace;
+  border-radius: 12px;
+}
+
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  opacity: 1;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+//test end
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,6 +248,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -62,16 +272,17 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  text-transform: camelcase;
+  letter-spacing: 2px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: 'Inconsolata', monospace;
+  color: black;
 }
 
 #logo:hover {
-  color: #fff;
+  color: #A4A4A4;
   text-decoration: none;
 }
 
@@ -196,10 +407,15 @@ input {
 }
 
 .field {
-  width: 250px;
+  width: 270px;
+   border-radius: 12px;
+}
+.field:focus {
+  border: 3px solid #555;
 }
 .imguploader{
   width: 250px;
+  border-radius: 12px;
 }
 
 /* Users index */
