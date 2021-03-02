@@ -5,7 +5,11 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
   end
-
+  def profilepic
+    if signed_in?
+      @profilepic  = current_user.profilepics.build
+    end
+  end
   def help
   end
   def about

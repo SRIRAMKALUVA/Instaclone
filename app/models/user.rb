@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
+  has_many :profilepics, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_relationships, foreign_key: "followed_id",
                                   class_name:  "Relationship",
@@ -27,6 +28,9 @@ class User < ActiveRecord::Base
   def feed
     # This is preliminary. See "Following users" for the full implementation.
     Micropost.from_users_followed_by(self)
+  end
+  def profile_feed
+    Profilepic.where("user_id = ?", id)
   end
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id)

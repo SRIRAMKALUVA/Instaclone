@@ -1,0 +1,9 @@
+<h1>test</h1>
+
+<%= form_for(@profilepic) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="imguploader">
+    <%= f.file_field :image, value: "Choose a file", direct_upload: true %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

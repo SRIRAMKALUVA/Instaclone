@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :post, only: [:create, :destroy]
   resources :microposts, only: [:create, :destroy]
+  resources :profilepics, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   root  'static_pages#home'
   match '/microposts/:id', to: 'microposts#destroy',     via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/profilepics', to: 'static_pages#profilepic', via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'

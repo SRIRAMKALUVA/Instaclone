@@ -514,7 +514,9 @@ div.gallery {
   border: 1px solid #ccc;
   float: left;
   width: 180px;
-  height: 250px;
+  height: 280px;
+
+
 }
 
 div.gallery:hover {
@@ -523,10 +525,24 @@ div.gallery:hover {
 
 div.gallery img {
   width: 100%;
-  height: 100%;
+  height: 140px;
+
+  object-fit: cover;
+  object-position: 20% 10%; /* try 20px 10px */
 }
 
 div.desc {
   padding: 15px;
   text-align: center;
+}
+
+
+
+.profilepic{
+  height: auto;
+  width: 70px;
+  // float: left;
+  object-fit: cover;
+    object-position: 20% 10%; /* try 20px 10px */
+    border: 2px solid black;
 }

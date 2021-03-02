@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @profilepics = @user.profilepics.last
   end
   def create
     @user = User.new(user_params)
