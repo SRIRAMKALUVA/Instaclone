@@ -567,7 +567,7 @@ div.desc {
     border-radius: 100%;
     margin-left: -4px;
     margin-top: -4px;
-    
+
 }
 .gg-search::after {
     content: "";
@@ -581,4 +581,32 @@ div.desc {
     transform: rotate(-45deg);
     top: 10px;
     left: 12px
+}
+
+.displayname{
+  font-size: 40px;
+  font-weight: 200;
+
+}
+
+
+
+.column1 {
+  float: left;
+  width: 30%;
+  .gravatar{
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px 10px 100px;
+  }
+}
+.column2 {
+  float: left;
+  width: 70%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
