@@ -8,6 +8,14 @@ class UsersController < ApplicationController
   def index
     @users = User.paginate(page: params[:page])
   end
+  def search
+    if params[:search].blank?
+    redirect_to(root_path, alert: "Empty field!") and return
+  else
+    @parameter = params[:search].downcase
+    @results = User.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+  end
+  end
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
