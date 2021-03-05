@@ -1,10 +1,6 @@
+
 <%= link_to gravatar_for(current_user), current_user %>
-<h1>
-  <%= current_user.name %>
-</h1>
+<span>&nbsp;</span>
 <span>
-  <%= link_to "View my profile", current_user, class: 'link-to-text-color' %>
-</span>
-<span>
-  <%= pluralize(current_user.microposts.count, "Post") %>
+  <h1><%= link_to current_user.name, current_user, class: 'link-to-text-color' %></h1>
 </span>

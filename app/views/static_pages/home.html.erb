@@ -1,21 +1,33 @@
 <% if signed_in? %>
   <div class="row">
     <div class="span8">
-      <h3 class="post-feed">Posts Feed</h3>
+      <section>
+        <%= render 'shared/micropost_form' %>
+
+      </section>
       <%= render 'shared/feed' %>
     </div>
     <aside class="span4">
+      &nbsp;
+      &ensp;
+      &emsp;
+      &nbsp;
+      &ensp;
+      &emsp;
+      &nbsp;
+      &ensp;
+      &emsp;
       <section>
         <%= render 'shared/user_info' %>
       </section>
       <section>
-        <%= render 'shared/stats_home' %>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
-      <section>
         <%= render 'shared/suggested_users' %>
+      </section>
+      <section>
+        <%= link_to "About - ",   about_path, class: 'link-to-text-color-aside' %><%= link_to "Contact - ", contact_path, class: 'link-to-text-color-aside' %>
+        <%= link_to "News - ", src="https://instagram.com", class: 'link-to-text-color-aside' %>
+        <%= link_to "Instagram Main ", src="https://instagram.com", class: 'link-to-text-color-aside' %>
+          <p class="info">clone by Sriram Kaluva</p>
       </section>
     </aside>
 
