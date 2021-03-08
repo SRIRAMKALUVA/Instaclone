@@ -218,16 +218,16 @@ li.dropdown {
   background-color: grey;
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 6px 12px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   margin: 4px 2px;
   opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-family: 'Inconsolata', monospace;
   border-radius: 12px;
   width: auto;
@@ -735,10 +735,47 @@ div.desc {
     padding: 2px;
     border: 1px solid #ee90c8;
   }
+  .wrapper{
+      width: 140px;
+      height: 140px;
+      margin: 40px auto;
+    }
 }
 .column2 {
   float: left;
   width: 70%;
+  .user-wrapper{
+      display: flex;
+    }
+    .username{
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 200;
+      color: black;
+    }
+    ul.posts-1{
+      text-align: left;
+      padding-left: 0px;
+      margin-left: auto;
+      margin-bottom: 15px;
+      margin-top: -10px;
+      > li{
+        display: inline;
+        padding-right: 30px;
+        font-size: 15px;
+        span{
+          color: #262626;
+          font-weight: 600;
+        }
+      }
+    }
+
+   .bio{
+     .bio-p{
+       text-align: left;
+       margin-bottom: 0px;
+     }
+   }
 }
 .column3 {
   float: left;
@@ -813,6 +850,7 @@ hr{
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   .overlay-content{
+
     .overlaytextarea{
       width: auto;
       padding: 0px 500px 0px 500px;
@@ -929,4 +967,50 @@ hr{
 .gg-options::after {
     bottom: -7px;
     right: -4px
+}
+
+
+.profile .avatar{
+    .wrapper{
+      width: 140px;
+      height: 140px;
+      margin: 40px auto;
+    }
+    .wrapper img{
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .profile .basic-info{
+    padding: 40px 0px;
+    .user-wrapper{
+      display: flex;
+    }
+    .username{
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 200;
+    }
+
+    ul.posts-1{
+      text-align: left;
+      padding-left: 0;
+      > li{
+        display: inline;
+        padding-right: 40px;
+        font-size: 15px;
+        span{
+          color: #262626;
+          font-weight: 600;
+        }
+      }
+    }
+
+   .bio{
+     text-align: left;
+   }
+  }
+.hr-line{
+  border-top: 1px solid #c9c9c9;
 }

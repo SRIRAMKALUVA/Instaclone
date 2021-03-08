@@ -1,15 +1,28 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <div class="column1">  <%= gravatar_for @user %></div>
+  <div class="column1">
+    <div class="wrapper"> <%= gravatar_for @user %>
+    </div>
+  </div>
   <div class="column2">
     <ul>
-    <div class="displayname"><%= @user.name %></div>
+      <div class="user-wrapper">
+        <h2 class="username"><%=@user.name%></h2>
+        <%= render 'follow_form' if signed_in? %>
+      </div>
+      <ul class="posts-1">
+        <li><span><%= @user.microposts.count %></span> posts</li>
+        <li><span><%= @user.followers.count %></span> followers</li>
+        <li><span><%= @user.followed_users.count %></span> following</li>
+      </ul>
+      <div class="bio">
+        <p class="bio-p">Hey! This is "<%=@user.name%>". This is my instaclone account. Follow me to know about me!!</p>
+      </div>
     </ul>
-    <ul><%= render 'shared/stats' %></ul>
-    <ul><%= render 'follow_form' if signed_in? %></ul>
-  </div>
 </div>
-<hr>
+</div>
+
+<hr class="hr-line">
 <div class="row">
   <div class="column3">
     <% if @user.microposts.any? %>
