@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://css.gg/boy.css');
 @import url('https://css.gg/home-alt.css');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
 
 
 /* universal */
@@ -13,7 +15,7 @@ html {
 body {
   padding-top: 60px;
   font-family: 'Inconsolata', monospace;
-  background-color: #ffffff;
+  background-color: rgb(253, 253, 253);
 }
 
 section {
@@ -218,9 +220,9 @@ li.dropdown {
   background-color: grey;
   border: none;
   color: white;
-  padding: 6px 12px;
+  padding: 5px 10px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   margin: 4px 2px;
   opacity: 0.6;
   transition: 0.3s;
@@ -273,23 +275,31 @@ p {
 }
 
 /* header */
-
+#searchbar{
+  border-radius: 12px;
+  width: 350px;
+  padding-top: 4px;
+  // background-color: #f2f2f2;
+}
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 2.3em;
   color: black;
   text-transform: camelcase;
-  letter-spacing: 2px;
-  padding-top: 9px;
-  font-weight: bold;
+  letter-spacing: 3px;
+  padding-top: 5px;
+  font-weight: lighter;
   line-height: 1;
-  font-family: 'Inconsolata', monospace;
+  // font-family: 'Great Vibes', cursive;
+  // font-family: 'Bad Script', cursive;
+  // font-family: 'Alex Brush', cursive;
+  font-family: 'Arizonia', cursive;
   // color: black;
 }
 
 #logo:hover {
-  color: #f2f2f2;
+  color: #808080;
   text-decoration: none;
 }
 
@@ -747,6 +757,11 @@ div.desc {
   .user-wrapper{
       display: flex;
     }
+    ul.profile-title{
+
+      > li{
+        display: inline;}
+    }
     .username{
       font-size: 30px;
       line-height: 40px;
@@ -800,6 +815,7 @@ hr{
 }
 .searchbar{
   border-radius: 12px;
+  width: 50px;
 }
 .post-feed{
   text-align: center;
@@ -1013,4 +1029,13 @@ hr{
   }
 .hr-line{
   border-top: 1px solid #c9c9c9;
+}
+
+#follow_form{
+  padding-left: 15px;
+  padding-top: 10px;
+}
+.navi{
+  background-color: #ffffff;
+  border-bottom: 1px solid #adadad;
 }
