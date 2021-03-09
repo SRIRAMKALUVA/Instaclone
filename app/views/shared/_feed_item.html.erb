@@ -21,13 +21,17 @@
     <span class="img"><%= image_tag(feed_item.image) %></span>
     <%= link_to like_micropost_path(feed_item), class: "like-btn", method: :put,remote: :true do %>
     <div>
+      <% if current_user.liked? feed_item %>
+        <span><p><i class="gg-heart-liked"></i></p></span>
+        <% else %>
         <span><p><i class="gg-heart"></i></p></span>
+      <% end %>
     </div>
     <% end %>
     <div class="likes">
         <span class="like-count"><%= pluralize(feed_item.get_upvotes.size, 'like') %></span>
     </div>
-    <span class="content"><%= feed_item.caption %></span>
+    <span class="content"><%= link_to feed_item.user.name, feed_item.user, class: 'username-for-description' %> : <%= feed_item.caption %></span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
