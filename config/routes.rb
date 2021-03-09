@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :microposts do
+    member do
+      get "like" => "microposts#vote"
+    end
+  end
   resources :users do
     member do
       get :following, :followers
@@ -20,5 +24,10 @@ Rails.application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+
+  match '/microposts/:id/like', to: 'microposts#vote', via: 'get', xhr: true
+
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -19,7 +19,14 @@
   <br>
   <div>
     <span class="img"><%= image_tag(feed_item.image) %></span>
-    <span><%= link_to '<i class="gg-heart"></i>'.html_safe, root_path %></span>
+    <%= link_to like_micropost_path(feed_item), class: "like-btn", method: :put,remote: :true do %>
+    <div>
+        <span><p><i class="gg-heart"></i></p></span>
+    </div>
+    <% end %>
+    <div class="likes">
+        <span class="like-count"><%= pluralize(feed_item.get_upvotes.size, 'like') %></span>
+    </div>
     <span class="content"><%= feed_item.caption %></span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.

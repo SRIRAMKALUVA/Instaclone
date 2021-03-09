@@ -1,4 +1,5 @@
 class Micropost < ApplicationRecord
+  acts_as_votable
   belongs_to :user
   default_scope -> { order('created_at DESC') }
   has_one_attached :image

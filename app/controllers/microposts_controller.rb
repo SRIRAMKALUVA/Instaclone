@@ -1,6 +1,11 @@
 class MicropostsController < ApplicationController
-  before_action :signed_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  include ActionController::MimeResponds
+  before_action :signed_in_user, only: [:create, :vote, :destroy]
+  before_action :correct_user,   only: [:vote, :destroy]
+  respond_to :js, :json, :html
+  respond_to do |format|
+  format.js {}
+end
 
   def index
   end
@@ -13,6 +18,15 @@ class MicropostsController < ApplicationController
     else
       @feed_items = []
       render 'static_pages/home'
+    end
+  end
+  def vote
+    if !current_user.liked? @micropost
+      @micropost.liked_by current_user
+      redirect_to root_url
+    elsif current_user.liked? @micropost
+      @micropost.unliked_by current_user
+      redirect_to root_url
     end
   end
 

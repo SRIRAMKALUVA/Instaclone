@@ -22,6 +22,8 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 # gem 'paperclip', '~> 4.2'
 # gem 'simple_form', '~> 5.1'
 gem 'jquery-rails'
+gem 'acts_as_votable'
+gem 'responders'
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'
