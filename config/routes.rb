@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :microposts do
     member do
       get "like" => "microposts#vote"
+      get "delete" => "microposts#destroy"
     end
   end
   resources :users do
@@ -16,7 +17,8 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   root  'static_pages#home'
   get '/search' => 'users#search', :as => 'search_page'
-  match '/microposts/:id', to: 'microposts#destroy', via: 'get'
+  # match '/microposts/:id', to: 'microposts#destroy', via: 'get'
+  # match '/microposts/:id', to: 'microposts#destroy', via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/profilepics', to: 'static_pages#profilepic', via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'get'
