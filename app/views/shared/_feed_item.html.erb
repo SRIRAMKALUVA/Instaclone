@@ -5,6 +5,7 @@
       <%= link_to feed_item.user.name, feed_item.user, class: 'link-to-text-color' %>
     </span>
 
+    <% if current_user?(feed_item.user) %>
     <span class="dropdown">
         <a href="javascript:void(0)" class="dropbtn"><i class="gg-options"></i></a>
         <div class="dropdown-content">
@@ -15,6 +16,7 @@
           <% end %>
         </div>
       </span>
+      <% end %>
   </div>
   <br>
   <div>
