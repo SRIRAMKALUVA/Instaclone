@@ -24,6 +24,8 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'jquery-rails'
 gem 'acts_as_votable'
 gem 'responders'
+gem 'figaro'
+
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'
