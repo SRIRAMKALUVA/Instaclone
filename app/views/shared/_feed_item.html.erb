@@ -24,16 +24,42 @@
     <%= link_to like_micropost_path(feed_item), class: "like-btn", method: :put,remote: :true do %>
     <div>
       <% if current_user.liked? feed_item %>
-        <span><p><i class="gg-heart-liked"></i></p></span>
+        <span><p><i class="gg-heart-liked"></i></p> </span>
         <% else %>
         <span><p><i class="gg-heart"></i></p></span>
       <% end %>
+
     </div>
     <% end %>
-    <div class="likes">
-        <span class="like-count"><%= pluralize(feed_item.get_upvotes.size, 'like') %></span>
+      <p class="heart"><%= pluralize(feed_item.get_upvotes.size, 'like') %></p>
+
+      <span class="content"><%= link_to feed_item.user.name, feed_item.user, class: 'username-for-description' %>  <%= feed_item.caption %></span>
+<hr>
+    <div class= "comments">
+      <% if !feed_item.comments.blank? %>
+      <!-- <p class="comments-logo"><i class="gg-comment"></i></p> -->
+      <!-- <p>Comments</p> -->
+
+        <% feed_item.comments.each do |comment| %>
+          <div class="comments-well">
+            <span class="comments-name"><%= link_to User.find(comment.user_id).name, User.find(comment.user_id), class: 'username-for-description' %></span>  <span><%= comment.body %></span>
+          <span class="comments-time"><%= time_ago_in_words(comment.created_at) %></span>
+          </div>
+          <% end %>
+      <% end %>
     </div>
-    <span class="content"><%= link_to feed_item.user.name, feed_item.user, class: 'username-for-description' %> : <%= feed_item.caption %></span>
+
+
+
+    <!-- <hr> -->
+    <div class="comments">
+      <%= form_for [feed_item, Comment.new] do |f| %>
+      <div class="form-group">
+        <%= f.text_area :body, class: "form-control-comments", placeholder: "Add your Comment", id:feed_item.id %>
+      </div>
+        <%= f.submit class:"button" %>
+      <% end %>
+    </div>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>

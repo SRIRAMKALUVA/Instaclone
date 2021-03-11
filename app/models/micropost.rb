@@ -3,6 +3,7 @@ class Micropost < ApplicationRecord
   belongs_to :user
   default_scope -> { order('created_at DESC') }
   has_one_attached :image
+  has_many :comments, as: :commentable
   validates :caption, length: { maximum: 140 }
   validates :user_id, presence: true
   def self.from_users_followed_by(user)

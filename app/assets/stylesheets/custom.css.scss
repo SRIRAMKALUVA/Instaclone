@@ -658,9 +658,9 @@ input {
   display: block;
   // text-transform: capitalize;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 15px;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 0px;
   height: auto;
 
 }
@@ -1105,4 +1105,106 @@ hr{
 .likes{
   padding-left: 10px;
   padding-top: 2px;
+  padding-bottom: 10px;
+  .like-count{
+
+  }
 }
+
+.form-control-comments{
+  width: 600px;
+  height: 30px;
+  align-items: center;
+  align-content: center;
+  // padding-top: 16px;
+  background-color: white;
+  text-align: center;
+
+  // background-color: grey;
+  font-family: 'Inconsolata', monospace;
+}
+.comments{
+  padding-left: 8px;
+  padding-top: 5px;
+  align-items: center;
+}
+.comments-well{
+  background-color: white;
+  // border: 1px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-bottom: 3px;
+  width: auto;
+  height: auto;
+  // border-radius: 12px;
+  // border-bottom: 1px solid black;
+}
+.comments-time{
+  float: right;
+  font-size: 10px;
+}
+.comments-logo{
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+.comments-name{
+  font-weight: bold;
+  font-size: 15px;
+}
+.gg-comment {
+box-sizing: border-box;
+position: relative;
+
+display: block;
+transform: scale(var(--ggs,1));
+width: 20px;
+height: 16px;
+border: 2px solid;
+border-bottom: 0;
+box-shadow:
+-6px 8px 0 -6px,
+6px 8px 0 -6px
+}
+
+.gg-comment::after,
+.gg-comment::before {
+content: "";
+display: block;
+box-sizing: border-box;
+position: absolute;
+width: 8px
+}
+
+.gg-comment::before {
+border: 2px solid;
+border-top-color: transparent;
+border-bottom-left-radius: 20px;
+right: 4px;
+bottom: -6px;
+height: 6px
+}
+
+.gg-comment::after {
+height: 2px;
+background: currentColor;
+box-shadow: 0 4px 0 0;
+left: 4px;
+top: 4px
+}
+
+.heart{
+  // background-color: pink;
+  // width: 20px;
+  // top: -32px;
+  font-weight: bold;
+  margin-left: 10px;
+  // left: 40px;
+  // position: relative;
+
+}
+// .comments-fake-logo{
+//   top: -27px;
+//   // font-weight: bold;
+//   left: 40px;
+//   position: relative;
+// }

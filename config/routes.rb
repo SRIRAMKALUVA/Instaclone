@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get "like" => "microposts#vote"
       get "delete" => "microposts#destroy"
     end
+    resources :comments, module: :microposts
   end
   resources :users do
     member do
