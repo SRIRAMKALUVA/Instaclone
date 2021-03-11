@@ -2,10 +2,10 @@
 
 one:
   content: MyText
-  commentable_id: 1
-  commentable_type: MyString
+  micropost: one
+  user: one
 
 two:
   content: MyText
-  commentable_id: 1
-  commentable_type: MyString
+  micropost: two
+  user: two
