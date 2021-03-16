@@ -15,8 +15,17 @@
         <li><span><%= @user.followers.count %></span> followers</li>
         <li><span><%= @user.followed_users.count %></span> following</li>
       </ul>
+      <% if @user.bio.nil? || @user.bio == '' || @user.bio == ' ' %>
       <div class="bio">
         <p class="bio-p">Hey! This is "<%=@user.name%>". This is my instaclone account. Follow me to know about me!!</p>
+      </div>
+      <% else %>
+      <div class="bio">
+        <p class="bio-p"><%= @user.bio %></p>
+      </div>
+      <% end %>
+      <div class="edit-bio">
+        <%= link_to '<i class="gg-edit-markup"></i>'.html_safe, edit_user_path(current_user), class: 'link-to-text-color' %>
       </div>
     </ul>
 </div>

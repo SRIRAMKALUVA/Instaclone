@@ -18,7 +18,10 @@
       <%= f.label :password_confirmation, "Confirm Password" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <%= f.label :bio %>
+      <%= f.text_field :bio %>
+
+      <%= f.submit "Save changes", class: "button" %>
     <% end %>
 
     <%= gravatar_for @user %>
