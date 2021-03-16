@@ -31,6 +31,7 @@
 
     </div>
     <% end %>
+    <span class= "comments-fake-logo"><%= link_to '<i class="gg-comment"></i>'.html_safe, :anchor => "#{feed_item.id}" %></span>
       <p class="heart"><%= pluralize(feed_item.get_upvotes.size, 'like') %></p>
 
       <span class="content"><%= link_to feed_item.user.name, feed_item.user, class: 'username-for-description' %>  <%= feed_item.caption %></span>
@@ -55,7 +56,7 @@
     <div class="comments">
       <%= form_for [feed_item, Comment.new] do |f| %>
       <div class="form-group">
-        <%= f.text_area :body, class: "form-control-comments", placeholder: "Add your Comment", id:feed_item.id %>
+        <%= f.text_area :body, class: "form-control-comments", placeholder: "Add your Comment", :name => "#{feed_item.id}" %>
       </div>
         <%= f.submit class:"button" %>
       <% end %>

@@ -1154,7 +1154,7 @@ hr{
 .gg-comment {
 box-sizing: border-box;
 position: relative;
-
+color: black;
 display: block;
 transform: scale(var(--ggs,1));
 width: 20px;
@@ -1202,9 +1202,10 @@ top: 4px
   // position: relative;
 
 }
-// .comments-fake-logo{
-//   top: -27px;
-//   // font-weight: bold;
-//   left: 40px;
-//   position: relative;
-// }
+.comments-fake-logo{
+  top: -29px;
+  color: black;
+  // font-weight: bold;
+  left: 40px;
+  position: relative;
+}
