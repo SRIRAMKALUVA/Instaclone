@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_084237) do
+ActiveRecord::Schema.define(version: 2021_03_16_110409) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -96,18 +96,8 @@ ActiveRecord::Schema.define(version: 2021_03_16_084237) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
-    t.string "remember_token"
-    t.boolean "admin", default: false
-    t.text "bio"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["remember_token"], name: "index_users_on_remember_token"
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'image' for column 'dp'
 
   create_table "votes", force: :cascade do |t|
     t.string "votable_type"
