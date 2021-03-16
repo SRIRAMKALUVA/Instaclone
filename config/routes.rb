@@ -11,6 +11,14 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+
+  resources :conversations do
+    member do
+      get "convo" => "conversations#create"
+    end
+    resources :messages
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :post, only: [:create, :destroy]
   resources :microposts, only: [:create, :destroy]

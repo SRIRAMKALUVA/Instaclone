@@ -1,0 +1,33 @@
+<div class=”ui segment”>
+ <h3>Mailbox</h3>
+ <br>
+ <div class=”ui list”>
+  <div class=”item”>
+   <% @conversations.each do |conversation| %>
+   <% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %>
+    <% if conversation.sender_id == current_user.id %>
+      <% recipient = User.find(conversation.recipient_id) %>
+    <% else %>
+      <% recipient = User.find(conversation.sender_id) %>
+    <% end %>
+    <%= link_to recipient.name, conversation_messages_path(conversation), class: "button"%>
+   <% end %>
+  <% end %>
+  </div>
+ </div>
+</div>
+<br>
+<div class=”ui segment”>
+ <h3>All Users</h3>
+  <div class=”ui list”>
+   <% @users.each do |user| %>
+    <% if user.id != current_user.id %>
+     <div class=”item”>
+       <ul class= "users">
+         <li><%= gravatar_for user %> <%= user.name %>  <%= link_to 'Message!', convo_conversation_path(sender_id: current_user.id, recipient_id: user.id, id: user.id), method: 'get', class: "button"%></li>
+       </ul>
+     </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

@@ -25,7 +25,8 @@ gem 'jquery-rails'
 gem 'acts_as_votable'
 gem 'responders'
 gem 'figaro'
-
+gem 'pry'
+gem 'uglifier'
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'

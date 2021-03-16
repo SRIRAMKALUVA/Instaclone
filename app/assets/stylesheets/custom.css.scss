@@ -242,6 +242,7 @@ li.dropdown {
   color: white;
   opacity: 1;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  text-decoration: none;
 }
 
 //test end
@@ -277,7 +278,7 @@ p {
 /* header */
 #searchbar{
   border-radius: 12px;
-  width: 350px;
+  width: 330px;
   padding-top: 4px;
   // background-color: #f2f2f2;
 }
@@ -1249,4 +1250,127 @@ border-bottom: 0;
 bottom: 0;
 left: 4px;
 transform: rotateX(60deg)
-} 
+}
+
+.dms{
+  color: black;
+  border: 2px solid black;
+  padding: 7px;
+  border-radius: 12px;
+  background-color: #f2f2f2;
+  // font-weight: bold;
+}
+.dms:hover{
+  text-decoration: none;
+  color: blue;
+}
+.field{
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 30px;
+  margin-top: 10px;
+  // float: right;
+  margin-left: 300px;
+  font-family: 'Inconsolata', monospace;
+
+}
+
+.send-button {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 12px;
+  margin: 4px 2px;
+  margin-left: 425px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: 'Inconsolata', monospace;
+  border-radius: 12px;
+  width: auto;
+  height: auto;
+}
+
+
+.send-button:hover {
+  background-color: black; /* Green */
+  color: white;
+  opacity: 1;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.item-right{
+  float: right;
+}
+.message-content{
+  margin: 5px;
+  margin-left: 10px;
+}
+.gg-mail,
+.gg-mail::after {
+display: block;
+box-sizing: border-box;
+height: 20px;
+border: 2px solid
+}
+
+.gg-mail {
+overflow: hidden;
+transform: scale(var(--ggs,1));
+position: relative;
+width: 25px;
+border-radius: 2px
+}
+
+.gg-mail::after {
+content: "";
+position: absolute;
+border-radius: 3px;
+width: 20px;
+transform: rotate(-45deg);
+bottom: 3px;
+left: 0
+}
+.gg-clipboard {
+box-sizing: border-box;
+position: relative;
+display: block;
+transform: scale(var(--ggs,1));
+width: 20px;
+height: 20px;
+border: 2px solid;
+border-radius: 2px
+}
+
+.gg-clipboard::after,
+.gg-clipboard::before {
+content: "";
+display: block;
+box-sizing: border-box;
+position: absolute;
+border-radius: 2px;
+width: 10px;
+left: 2px
+}
+
+.gg-clipboard::before {
+border: 2px solid;
+border-bottom-left-radius: 3px;
+border-bottom-right-radius: 3px;
+top: -2px;
+left: 3px;
+height: 6px
+}
+
+.gg-clipboard::after {
+height: 2px;
+background: currentColor;
+box-shadow: 0 -4px 0 0;
+bottom: 4px;
+left: 3px;
+}
