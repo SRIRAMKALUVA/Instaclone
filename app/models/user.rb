@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   has_one_attached :dp
   has_many :comments, as: :commentable
   has_many :conversations, :foreign_key => :sender_id
+
+  has_many :favorites
+  has_many :favorite_microposts, through: :favorites, source: :favorited, source_type: 'Micropost'
+
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },

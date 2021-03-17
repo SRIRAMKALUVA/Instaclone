@@ -18,7 +18,16 @@ Rails.application.routes.draw do
     end
     resources :messages
   end
-
+  resources :favorite_microposts do
+    member do
+      get "fav" => "favorite_microposts#create"
+      # get "favs" => "favorite_microposts#index"
+      get "unfav" => "favorite_microposts#destroy"
+    end
+    # resources :messages
+  end
+  get '/favorites', to: 'favorite_microposts#index', as: 'favorites'
+  # resources :favorite_microposts, only: [:create, :destroy, :index]
   resources :sessions, only: [:new, :create, :destroy]
   resources :post, only: [:create, :destroy]
   resources :microposts, only: [:create, :destroy]

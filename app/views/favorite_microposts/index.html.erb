@@ -1,0 +1,36 @@
+<h3>Saved Posts</h3>
+<div class="row">
+  <div class="column3">
+<ol class="microposts">
+<% @favorites.each do |fav| %>
+<div class="gallery">
+<li>
+  <div class="post-title">
+    <%= link_to gravatar_for(fav.user), fav.user %>
+    <span>
+      <%= link_to fav.user.name, fav.user, class: 'link-to-text-color' %>
+    </span>
+    </div>
+
+  <div class="img">
+    <%= image_tag(fav.image) %>
+  </div>
+  <div class="desc">
+  <span class="caption"><%= fav.caption %></span><br>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(fav.created_at) %> ago.
+  </span>
+  <span class="saved-saveicon">
+    <%- unless current_user.favorite_microposts.exists?(id: fav.id) -%>
+      <%= link_to '<i class="gg-bookmark"></i>'.html_safe, fav_favorite_micropost_path(id: fav.id), method: :get, class: 'bookmark' %>
+    <%- else -%>
+      <%= link_to '<i class="gg-bookmark-added"></i>'.html_safe, unfav_favorite_micropost_path(id: fav.id), method: :delete, class: 'bookmark' %>
+    <%- end -%>
+  </span>
+  </div>
+</li>
+</div>
+<% end %>
+</ol>
+</div>
+</div>

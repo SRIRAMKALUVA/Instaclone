@@ -28,6 +28,9 @@
       <div class="edit-bio">
         <%= link_to '<i class="gg-edit-markup"></i>'.html_safe, edit_user_path(current_user), class: 'link-to-text-color' %>
       </div>
+      <div class="saved">
+        <%= link_to '<i class="gg-bookmark"></i>'.html_safe, favorites_path, class: 'link-to-text-color' %>
+      </div>
       <% end %>
     </ul>
 </div>
