@@ -7,13 +7,13 @@
       <% user = User.find(message.user_id) %>
       <div class="item">
         <div class="message-content">
-          <div class="header"><strong><%= user.name %></strong> </div>
+          <div class="header"> </div>
           <div class="list">
             <div class="item">
               <i class="right triangle icon"></i>
+              <strong><%= user.name %></strong>
               <%= message.body %>
               <span class="comments-time"><%= time_ago_in_words(message.created_at)%> ago</span>
-
             </div>
           </div>
         </div>

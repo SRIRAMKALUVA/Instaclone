@@ -436,7 +436,7 @@ input {
    border-radius: 12px;
 }
 .field:focus {
-  border: 3px solid #555;
+  // border: 2px solid #555;
 }
 .imguploader{
   width: 250px;
@@ -1307,10 +1307,13 @@ transform: rotateX(60deg)
 .item-right{
   float: right;
 }
+
 .message-content{
   margin: 5px;
   margin-left: 10px;
+
 }
+
 .gg-mail,
 .gg-mail::after {
 display: block;
