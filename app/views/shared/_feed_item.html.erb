@@ -28,10 +28,16 @@
         <% else %>
         <span><p><i class="gg-heart"></i></p></span>
       <% end %>
-
+      <span>
+        <%- unless current_user.favorite_microposts.exists?(id: feed_item.id) -%>
+          <%= link_to '<i class="gg-bookmark"></i>'.html_safe, fav_favorite_micropost_path(id: feed_item.id), method: :get, class: 'bookmark' %>
+        <%- else -%>
+          <%= link_to '<i class="gg-bookmark-added"></i>'.html_safe, unfav_favorite_micropost_path(id: feed_item.id), method: :delete, class: 'bookmark' %>
+        <%- end -%>
+      </span>
     </div>
     <% end %>
-    
+
       <p class="heart"><%= pluralize(feed_item.get_upvotes.size, 'like') %></p>
 
       <span class="content"><%= link_to feed_item.user.name, feed_item.user, class: 'username-for-description' %>  <%= feed_item.caption %></span>
@@ -64,5 +70,7 @@
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
+
+
   </div>
 </li>
