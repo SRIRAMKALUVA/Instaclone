@@ -1,0 +1,68 @@
+
+
+
+<div class="row">
+  <div class="column2-post">
+    <%= image_tag(@micropost.image) %>
+  </div>
+  <div class="column9">
+    <div>
+      <%= link_to gravatar_for(@micropost.user), @micropost.user %>
+      <span>
+        <%= link_to @micropost.user.name, @micropost.user, class: 'link-to-text-color' %>
+      </span>
+      </div>
+  </div>
+  <div class="column9">
+    <span class="content"><%= link_to @micropost.user.name, @micropost.user, class: 'username-for-description' %>  <%= @micropost.caption %></span>
+  </div>
+  <div class="column9">
+    <div class= "comments1">
+      <% if !@micropost.comments.blank? %>
+      <!-- <p class="comments-logo"><i class="gg-comment"></i></p> -->
+      <!-- <p>Comments</p> -->
+
+        <% @micropost.comments.each do |comment| %>
+          <div class="comments-well1">
+            <span class="comments-name1"><%= link_to User.find(comment.user_id).name, User.find(comment.user_id), class: 'username-for-description' %></span>  <span><%= comment.body %></span>
+
+          </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <div class="column9">
+
+<%= link_to like_micropost_path(@micropost), class: "like-btn", method: :put,remote: :true do %>
+<div>
+  <% if current_user.liked? @micropost %>
+    <span><p><i class="gg-heart-liked"></i></p> </span>
+    <% else %>
+    <span><p><i class="gg-heart"></i></p></span>
+  <% end %>
+  <span>
+    <%- unless current_user.favorite_microposts.exists?(id: @micropost.id) -%>
+      <%= link_to '<i class="gg-bookmark"></i>'.html_safe, fav_favorite_micropost_path(id: @micropost.id), method: :get, class: 'bookmark' %>
+    <%- else -%>
+      <%= link_to '<i class="gg-bookmark-added"></i>'.html_safe, unfav_favorite_micropost_path(id: @micropost.id), method: :delete, class: 'bookmark' %>
+    <%- end -%>
+  </span>
+</div>
+<% end %>
+
+  </div>
+  <div class="column9">
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(@micropost.created_at) %> ago.
+    </span>
+    <!-- <hr> -->
+    <div class="comments">
+      <%= form_for [@micropost, Comment.new] do |f| %>
+      <div class="form-group">
+        <%= f.text_field :body, class: "form-control-comments1", placeholder: "Add your Comment", id:@micropost.id %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

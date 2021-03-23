@@ -14,6 +14,11 @@
 
   <div class="img">
     <%= image_tag(fav.image) %>
+    <%= link_to current_micropost_path(fav.id) do %>
+    <div class="overlay-fav">
+      <div class= "text1"><p><span class="heart-symbol">&#10084;</span><span class="heart-count"><%= fav.get_upvotes.size %> | </span><span class="comments-symbol">&#128172;</span><span class= "heart-count"><%= fav.comments.count %></span></p></div>
+    </div>
+    <% end %>
   </div>
   <div class="desc">
   <span class="caption"><%= fav.caption %></span><br>

@@ -2,15 +2,19 @@ class MicropostsController < ApplicationController
   include ActionController::MimeResponds
   before_action :signed_in_user, only: [:create, :vote, :destroy]
   before_action :correct_user,   only: [:destroy]
-  respond_to :js, :json, :html
+  protect_from_forgery except: :vote
+  # respond_to :js {render layout: false}
   respond_to do |format|
-    format.html
+  #   format.html
     format.js {render layout: false}
   end
 
 
   def index
-    
+  end
+
+  def show
+    @micropost = Micropost.find(params[:id])
   end
 
   def create
@@ -27,17 +31,19 @@ class MicropostsController < ApplicationController
     @micropost_all = Micropost.find(params[:id])
     if !current_user.liked? @micropost_all
       @micropost_all.liked_by current_user
-      redirect_to root_url
+      # respond_to :js
+      redirect_back fallback_location: root_path
     elsif current_user.liked? @micropost_all
       @micropost_all.unliked_by current_user
-      redirect_to root_url
+      # respond_to :js
+      redirect_back fallback_location: root_path
     end
   end
 
   def destroy
     @micropost = Micropost.find(params[:id])
     @micropost.destroy
-    redirect_to root_url
+    redirect_back fallback_location: root_path
   end
   private
 

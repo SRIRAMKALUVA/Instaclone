@@ -7,15 +7,15 @@ class FavoriteMicropostsController < ApplicationController
 
   def create
     if Favorite.create(favorited: @micropost, user: current_user)
-      redirect_to root_url, notice: 'micropost has been favorited'
+      redirect_back fallback_location: root_path, notice: 'micropost has been favorited'
     else
-      redirect_to root_url, alert: 'Something went wrong...*sad panda*'
+      redirect_back fallback_location: root_path, alert: 'Something went wrong...*sad panda*'
     end
   end
 
   def destroy
     Favorite.where(favorited_id: @micropost.id, user_id: current_user.id).first.destroy
-    redirect_to root_url, notice: 'micropost is no longer in favorites'
+    redirect_back fallback_location: root_path, notice: 'micropost is no longer in favorites'
   end
 
   private
