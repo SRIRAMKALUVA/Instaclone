@@ -1,0 +1,29 @@
+
+<% if @notifications.count== 0 %>
+<h3> No notifications found </h3>
+<h3><%= @notifications.count %></h3>
+<%else%>
+<h3>New Notifications (<%= current_user.notifications.where(read: false).count %>)</h3>
+<% @notifications.each do |notification| %>
+
+<div class="notification-feed">
+<% if notification.read == false %>
+<%= link_to image_tag(Micropost.find(notification.micropost_id ).image,:class=>"profile-pic_2 float-right")%>
+<%= link_to "#{notification.notified_by.name} has #{notification.notice_type}ed on your post", link_through_path(notification)%>
+<span class="timestamp">
+  <%= time_ago_in_words(notification.created_at) %> ago.
+</span>
+
+
+<%else%>
+<%= link_to image_tag(Micropost.find(notification.micropost_id ).image,:class=>"profile-pic_2 float-right")%>
+<%= link_to "#{notification.notified_by.name} has #{notification.notice_type}ed on your post", link_through_path(notification), class:"text-dark"%>
+<span class="timestamp-notification">
+  <%= time_ago_in_words(notification.created_at) %> ago.
+</span>
+
+
+<%end%>
+</div>
+<%end%>
+<%end%>

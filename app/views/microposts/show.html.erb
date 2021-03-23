@@ -5,6 +5,7 @@
   <div class="column2-post">
     <%= image_tag(@micropost.image) %>
   </div>
+
   <div class="column9">
     <div>
       <%= link_to gravatar_for(@micropost.user), @micropost.user %>
@@ -21,17 +22,17 @@
       <% if !@micropost.comments.blank? %>
       <!-- <p class="comments-logo"><i class="gg-comment"></i></p> -->
       <!-- <p>Comments</p> -->
-
+      <% com = @micropost.comments.last(5) %>
         <% @micropost.comments.each do |comment| %>
           <div class="comments-well1">
             <span class="comments-name1"><%= link_to User.find(comment.user_id).name, User.find(comment.user_id), class: 'username-for-description' %></span>  <span><%= comment.body %></span>
-
           </div>
           <% end %>
       <% end %>
     </div>
   </div>
-  <br>
+  <!-- <br> -->
+
   <div class="column9">
 
 <%= link_to like_micropost_path(@micropost), class: "like-btn", method: :put,remote: :true do %>
@@ -50,7 +51,7 @@
   </span>
 </div>
 <% end %>
-
+<br>
   </div>
   <div class="column9">
     <span class="timestamp">

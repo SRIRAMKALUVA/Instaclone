@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'notifications/link_through'
   resources :microposts do
     member do
       get "like" => "microposts#vote" , :defaults => { :format => 'js' }
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'notifications', to: 'notifications#index'
+  get 'notifications/:id/link_through', to: 'notifications#link_through',
+                                          as: :link_through
   resources :conversations do
     member do
       get "convo" => "conversations#create"

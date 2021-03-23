@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   has_one_attached :dp
+  has_many :notifications, dependent: :destroy
   has_many :comments, as: :commentable
   has_many :conversations, :foreign_key => :sender_id
 

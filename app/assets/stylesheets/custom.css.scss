@@ -886,7 +886,7 @@ div.desc {
 
 
 .column9 {
-  float: left;
+  float: right;
   width: 30%;
   .gravatar{
     width: 40px;
@@ -1701,3 +1701,87 @@ left: -1px
   top: 40px;
   left: 15px;
 }
+
+.notification-feed {
+        margin-top: 1em;
+        // background-color: lightblue;
+        // padding: 1em;
+    }
+
+.text-dark{
+  color: black;
+}
+.gg-bell,
+.gg-bell::before {
+border-top-left-radius: 100px;
+border-top-right-radius: 100px
+}
+
+.gg-bell {
+box-sizing: border-box;
+position: relative;
+display: block;
+transform: scale(var(--ggs,1));
+border: 2px solid;
+border-bottom: 0;
+width: 14px;
+height: 14px
+}
+
+.gg-bell::after,
+.gg-bell::before {
+content: "";
+display: block;
+box-sizing: border-box;
+position: absolute
+}
+
+.gg-bell::before {
+background: currentColor;
+width: 4px;
+height: 4px;
+top: -4px;
+left: 3px
+}
+
+.gg-bell::after {
+border-radius: 3px;
+width: 16px;
+height: 10px;
+border: 6px solid transparent;
+border-top: 1px solid transparent;
+box-shadow:
+inset 0 0 0 4px,
+0 -2px 0 0;
+top: 14px;
+left: -3px;
+border-bottom-left-radius: 100px;
+border-bottom-right-radius: 100px
+}
+.timestamp-notification{
+  color: $grayLight;
+  font-size: 10px;
+  margin-top: 7px;
+  float: right;
+}
+.bell{
+  font-size: 20px;
+  // font-weight: bold;
+}
+  .profile-pic_2{
+    height: 40px;
+    width: 40px;
+  }
+
+  .badge {
+    position: relative;
+    top: 0px;
+    left: -16px;
+    font-size: 14px;
+    padding: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: black;
+   }
