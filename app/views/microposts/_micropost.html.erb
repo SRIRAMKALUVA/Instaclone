@@ -1,10 +1,20 @@
+
+<%= link_to current_micropost_path(micropost.id) do %>
 <div class="gallery">
 <li>
   <div class="img">
     <%= image_tag(micropost.image) %>
+
+
+    <div class="overlay">
+    <div class= "text1"><p><span class="heart-symbol">&#10084;</span><span class="heart-count"><%= micropost.get_upvotes.size%> | </span><span class="comments-symbol">&#128172;</span><span class= "heart-count"><%= micropost.comments.count %></span></p></div>
+    </div>
+
   </div>
+
+
   <div class="desc">
-  <span class="caption"><%= micropost.caption %></span><br>
+  <span class="caption"><%= link_to  micropost.caption, current_micropost_path(micropost.id), class: "link-to-text-color" %></span><br>
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
   </span>
@@ -16,3 +26,4 @@
   </div>
 </li>
 </div>
+<% end %>

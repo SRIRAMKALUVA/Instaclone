@@ -4,19 +4,21 @@ class LikesController < ApplicationController
   def create
     @micropost.likes.where(user_id: current_user.id).first_or_create
 
-    respond_to do |format|
-      format.html { redirect_to @micropost }
-      format.js
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to @micropost }
+    #   format.js
+    # end
+    respond_to :js
   end
 
   def destroy
     @micropost.likes.where(user_id: current_user.id).destroy_all
-
-    respond_to do |format|
-      format.html { redirect_to @micropost }
-      format.js
-    end
+    #
+    # respond_to do |format|
+    #   format.html { redirect_to @micropost }
+    #   format.js
+    # end
+    respond_to :js
   end
 
   private

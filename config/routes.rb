@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :microposts do
     member do
-      get "like" => "microposts#vote"
+      get "like" => "microposts#vote" , :defaults => { :format => 'js' }
       get "delete" => "microposts#destroy"
+      get "current" => "microposts#show"
     end
     resources :comments, module: :microposts
   end
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
   # resources :favorite_microposts, only: [:create, :destroy, :index]
   resources :sessions, only: [:new, :create, :destroy]
   resources :post, only: [:create, :destroy]
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :show, :destroy]
   resources :profilepics, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   root  'static_pages#home'
